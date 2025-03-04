@@ -1,16 +1,38 @@
 package com.example.demo.Models;
 
-public class Producto {
+import jakarta.persistence.*; 
+
+
+public class Producto { //Este bloque de codigo sirve para crear la tabla MSQL
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String nombre;
-    private String vencimiento;
+
+    @Column
     private String marca;
+
+    @Column
     private String descripcion;
+
+    @Column
     private double precio;
+
+    @Column
     private double peso;
+
+    @Column
     private String calidad; 
+
+    @Column
     private String categoria; 
+
+    @Column
     private int cantidad;
+
+    @Column
     private Boolean estado;
 
     //Constructor vacío o sin parametros
@@ -19,10 +41,9 @@ public class Producto {
     }
 
 //Constructor con parametros
-public Producto(Integer id, String nombre, String vencimiento, String marca, String descripcion, double precio, double peso, String calidad, String categoria,int cantidad, Boolean estado){
+public Producto(Integer id, String nombre, String marca, String descripcion, double precio, double peso, String calidad, String categoria,int cantidad, Boolean estado){
     this.id= id;
     this.nombre= nombre;
-    this.vencimiento= vencimiento;
     this.marca= marca;
     this.descripcion= descripcion; 
     this.precio= precio;
@@ -41,13 +62,13 @@ public Producto(Integer id, String nombre, String vencimiento, String marca, Str
     }
     public void setNombre(String nombre){this.nombre = nombre;
     }
-    public String getVencimiento(){return vencimiento;
-    }
-    public void setVencimiento(String vencimiento){this.vencimiento = vencimiento;
-    }
     public String getMarca(){return marca; 
     }
     public void setMarca(String marca){this.marca=marca; 
+    }
+    public String getDescripcion(){return descripcion; 
+    }
+    public void setDescripcion(String descripcion){this.descripcion=descripcion;
     }
     public double getPrecio(){return precio; 
     }

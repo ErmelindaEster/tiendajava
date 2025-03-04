@@ -1,20 +1,53 @@
 package com.example.demo.Models;
 
+
+import jakarta.persistence.*; 
+
+
 public class Cliente {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
     private String nombre;
+
+    @Column
     private String apellido;
+
+    @Column
     private String direccion;
+
+    @Column
     private String telefono;
+
+    @Column
     private String email;
+
+    @Column
     private String ciudad;
-    private String provincia; 
-    private String pais; 
+
+    @Column
+    private String provincia;
+    
+    @Column
+    private String pais;
+    
+    @Column
     private String metodopago;
+
+    @Column
     private Boolean activo;
+
+    @Column
     private String notas;
+
+    @Column
     private String categoria;
-    private double saldo; 
+
+    @Column
+    private double saldo;
+
 
      //Constructor vacío o sin parametros
      public Cliente(){
